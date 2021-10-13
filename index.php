@@ -1,3 +1,5 @@
 <?php
 
-echo "Hello world!";
+echo "Strona Natalii Hańderek! ";
+$date = 241200;
+echo $date;
