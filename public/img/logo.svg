@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="618.154" viewBox="0 0 736 618.154">
+  <g id="logo_2" data-name="logo 2" transform="translate(0.5 0.506)" opacity="0.9">
+    <text id="BookSpace" transform="translate(0 547.147)" fill="#a58c78" stroke="#a58c78" stroke-width="0.5" font-size="150" font-family="SimSun-ExtB" letter-spacing="0.05em"><tspan x="0" y="0">BookSpace</tspan></text>
+    <text id="Your_Virtual_Bookshelf" data-name="Your Virtual Bookshelf" transform="translate(8.936 611.147)" fill="#d6bfad" stroke="#a58c78" stroke-width="0.5" font-size="40" font-family="SimSun-ExtB" letter-spacing="0.32em"><tspan x="0" y="0">Your Virtual Bookshelf</tspan></text>
+    <path id="Icon_awesome-book-open" data-name="Icon awesome-book-open" d="M474.091,2.3C426.177,5.016,330.942,14.914,272.151,50.9a13.443,13.443,0,0,0-6.357,11.515V380.568c0,10.1,11.043,16.482,20.355,11.8,60.488-30.445,147.967-38.751,191.221-41.025,14.768-.778,26.248-12.617,26.248-26.808V29.14C503.627,13.655,490.2,1.388,474.091,2.3ZM231.467,50.9C172.685,14.914,77.45,5.025,29.536,2.3,13.43,1.388,0,13.655,0,29.14v295.4c0,14.2,11.48,26.038,26.248,26.808C69.52,353.621,157.042,361.936,217.53,392.4c9.286,4.678,20.294-1.7,20.294-11.769V62.26A13.163,13.163,0,0,0,231.467,50.9Z" transform="translate(115.691 -2.25)" fill="#d6bfad" stroke="#a58c78" stroke-width="1"/>
+  </g>
+</svg>

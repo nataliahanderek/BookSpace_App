@@ -1,5 +1,12 @@
 <?php
+echo 'Hi there 👋';
+/*
+require 'Routing.php';
+ 
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url( $path, PHP_URL_PATH);
 
-echo "Strona Natalii Hańderek! ";
-$date = 241200;
-echo $date;
+Router::get('', 'DefaultController');
+Router::get('dashboard', 'DefaultController');
+
+Router::run($path); */

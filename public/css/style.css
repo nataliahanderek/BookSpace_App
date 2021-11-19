@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent url('img/7583938800-IMG-4888.jpg') 0% 0% no-repeat padding-box;
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer {
+    width: 80%;
+    height: 80%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 5px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.8;
+    position: absolute;
+    z-index: 1;
+}
+
+.logo {
+    width: 35%;
+    text-align: center;
+    z-index: 2;
+}
+
+.login-container {
+    width: 40%;
+    z-index: 2;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 40vh;
+    z-index: 2;
+    margin: 7em;
+}
+
+button {
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.9;
+    
+    width: 30%;
+    color: #A58C78;
+    margin: 1em;
+    font: normal normal normal 40px/55px Segoe UI;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    padding: 0.5em;
+    margin: 1em;
+    width: 70%;
+    font: normal normal normal 20px/10px Segoe UI;
+}
+
+button-2 {
+    text-align: left;
+    font: normal normal normal 15x/20px Segoe UI;
+    color: #A58C78;
+}
