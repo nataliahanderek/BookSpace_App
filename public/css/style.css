@@ -36,7 +36,7 @@ body {
     z-index: 2;
 }
 
-form {
+form.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +47,7 @@ form {
     margin: 7em;
 }
 
-button {
+button[name="login-button"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
     border-radius: 20px;
@@ -60,17 +60,168 @@ button {
 }
 
 input {
-    background-color: transparent;
+    background-color: #D6BFAD;
     border: 1px solid #A58C78;
     border-radius: 20px;
+    opacity: 0.9;
     padding: 0.5em;
-    margin: 1em;
+    margin: 0.5em;
     width: 70%;
     font: normal normal normal 20px/10px Segoe UI;
 }
 
-button-2 {
+button[name="want-sign-up"] {
     text-align: left;
     font: normal normal normal 15x/20px Segoe UI;
     color: #A58C78;
+    border: none;
+    background-color: transparent;
 }
+
+
+
+/*STRONA MY BOOKSHELF*/
+
+
+
+.base-contariner {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-menu {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    opacity: 0.9;
+}
+
+.search > input {
+    background-color: white;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    margin: 0.5em;
+    width: 50em;
+    font: normal normal normal 15px/10px Segoe UI;
+}
+
+form.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20em;
+    height: 3em;
+}
+
+.top-menu > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    list-style-type: none;
+    color:  #A58C78;
+    font: normal normal normal 15px/10px Segoe UI;
+    width: 100%;
+    margin: 0;
+}
+
+.header-button {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    margin-left: 1em;
+    margin-right: 2em;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #A58C78;
+    padding: 0.5em 1em;
+    
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+    line-height: 1em;
+}
+
+li {
+    text-align: center;
+    font-size: 1em;
+    align-self: center;
+}
+
+
+.down-site {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-site > img {
+    width: 15vw;
+    display: flex;
+    flex-direction: centre;
+    margin: 3em auto;
+}
+
+.genres {
+    width: 20vw;
+    height: 1075px;
+    margin: 2em 3em;
+    background: #D6BFAD66 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    border: 1px solid #A58C78;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.genres-button {
+    
+    border-radius: 20px;
+    margin-left: 1em;
+    margin-right: 2em;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #A58C78;
+    padding: 0.2em;
+    width: 60%;
+}
+
+.genres > ul {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    list-style-type: none;
+    color:  #A58C78;
+    font: normal normal normal 15px/10px Segoe UI;
+
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1em;
+    
+}
+
+li {
+    text-align: center;
+    font-size: 1em;
+}
+
+
+
+
+
+.my-books {
+    display: flex;
+    align-items: row;
+    justify-content: center;
+} 
