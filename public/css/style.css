@@ -5,7 +5,7 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    background: transparent url('img/7583938800-IMG-4888.jpg') 0% 0% no-repeat padding-box;
+    background: transparent url('../img/background.jpg') 0% 0% no-repeat padding-box;
     background-position: center top;
     background-size: cover;
     display: flex;
@@ -168,9 +168,42 @@ li {
     margin: 3em auto;
 }
 
+.add-book {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 0.5em 2em;
+}
+
+.books-on-my-shelf {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 1em 2em;
+}
+
+.books-I-have-read {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 1em 2em;
+}
+
 .genres {
     width: 20vw;
-    height: 1075px;
+    height: 1100px;
     margin: 2em 3em;
     background: #D6BFAD66 0% 0% no-repeat padding-box;
     border-radius: 20px;
@@ -185,23 +218,25 @@ li {
 .genres-button {
     
     border-radius: 20px;
-    margin-left: 1em;
-    margin-right: 2em;
+    margin: 0.3em 0.3em;
     text-align: center;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     color: #A58C78;
-    padding: 0.2em;
-    width: 60%;
+    padding: 0.3em;
+    width: 65%;
 }
 
 .genres > ul {
-    display: flex;
-    flex-direction: column;
     text-align: left;
     list-style-type: none;
     color:  #A58C78;
-    font: normal normal normal 15px/10px Segoe UI;
+    font: normal normal normal 17px/10px Segoe UI;
+    padding-inline-start: 0px;
+}
 
+.genres > li {
+    display: flex;
+    flex-direction: row;
 }
 
 a {
@@ -216,11 +251,7 @@ li {
     font-size: 1em;
 }
 
-
-
-
-
-.my-books {
+main {
     display: flex;
     align-items: row;
     justify-content: center;
