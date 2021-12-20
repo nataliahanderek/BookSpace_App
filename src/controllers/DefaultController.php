@@ -9,8 +9,13 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function dashboard()
+    public function registration()
     {
-        $this->render('dashboard');
+        $this->render('registration');
+    }
+
+    public function mybookshelf()
+    {
+        $this->render('mybookshelf');
     }
 }
