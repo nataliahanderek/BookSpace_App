@@ -179,7 +179,6 @@ li {
     padding: 0.5em 2em;
 }
 
-
 .books-on-my-shelf {
     border: 1px solid #A58C78;
     border-radius: 20px;
@@ -233,6 +232,7 @@ li {
     color:  #A58C78;
     font: normal normal normal 17px/10px Segoe UI;
     padding-inline-start: 0px;
+    position: relative;
 }
 
 .genres > li {
@@ -257,3 +257,10 @@ main {
     align-items: row;
     justify-content: center;
 } 
+
+.my-books > div > img {
+    height: 20em;
+    width: 15em;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}

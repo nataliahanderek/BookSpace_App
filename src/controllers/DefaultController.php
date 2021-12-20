@@ -18,4 +18,9 @@ class DefaultController extends AppController {
     {
         $this->render('mybookshelf');
     }
+
+    public function bookforbook()
+    {
+        $this->render('bookforbook');
+    }
 }
