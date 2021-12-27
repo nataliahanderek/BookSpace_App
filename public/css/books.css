@@ -1,4 +1,6 @@
-section {
+/* LISTA KSIAZEK */
+
+section[class="my-books"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5em;
@@ -46,3 +48,8 @@ h3 {
     font: normal normal normal 20px/27px Segoe UI;
     margin: 0.5em;
 }
+
+
+
+
+

@@ -47,6 +47,18 @@ form.login {
     margin: 7em;
 }
 
+/* .login-button {
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.9;
+    
+    width: 30%;
+    color: #A58C78;
+    margin: 1em;
+    font: normal normal normal 40px/55px Segoe UI;
+} */
+
 button[name="login-button"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
@@ -80,7 +92,11 @@ button[name="want-sign-up"] {
 
 
 
-/*STRONA MY BOOKSHELF*/
+
+
+/*STRONA MY BOOKSHELF ORAZ PODSTAWOWE MENU I FUNKCJE*/
+
+
 
 
 

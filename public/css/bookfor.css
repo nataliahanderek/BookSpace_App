@@ -1,5 +1,7 @@
 /*STRONA BOOK FOR BOOK */
-section {
+
+
+section[class="my-books"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5em;
@@ -55,6 +57,14 @@ header {
     font: normal normal normal 40px/10px Segoe UI;
     letter-spacing: 1em;
     color: #A58C78;
+}
+
+section[class="books-for-books"] {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5em;
+    padding: 2em;
+    overflow: auto; 
 }
 
 .books-for-books > div > img {

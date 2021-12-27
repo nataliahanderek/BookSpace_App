@@ -1,0 +1,135 @@
+/* STRONA JEDNEJ KSIĄŻKI */
+
+section[class="book"] {
+    display: flex;
+    margin: 3em;
+    padding: 0em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+}
+
+.left-site > img {
+    width: 15vw;
+    display: flex;
+    flex-direction: centre;
+    margin: 3em auto;
+}
+
+.book > div > img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.book > div > div {
+    height: 20%;
+    color: white;
+    margin: 0.2em;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.book > div {
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    border-radius: 20px 20px 20px 20px;
+    height: 25em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font: italic normal bold 25px/24px Segoe UI;
+    margin: 0.5em;
+}
+
+h3 {
+    font: normal normal normal 20px/27px Segoe UI;
+    margin: 0.5em;
+}
+
+.button-under {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-remove-button {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 0.8em 1em;
+}
+
+.mark-as-read-button {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 0.7em 3em;
+}
+
+.right-site-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80vw;
+}
+
+.description-layer {
+    margin: 3em 0em 1.5em 0em;
+    width: 120vh;
+    height: 20vw;
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.description > p {
+    background-color: transparent;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 0.3em 3em;
+}
+
+.details-layer {
+    margin: 1.5em 0em;
+    width: 40vh;
+    height: 20vw;
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.8;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+li {
+    text-decoration: none;
+    background-color: transparent;
+    font: normal normal normal 15px/15px Segoe UI;
+    color: #A58C78;
+    padding: 0.3em 3em;
+    color: #A58C78;
+}

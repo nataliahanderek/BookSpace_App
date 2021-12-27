@@ -23,4 +23,9 @@ class DefaultController extends AppController {
     {
         $this->render('bookforbook');
     }
+
+    public function bookprofile()
+    {
+        $this->render('bookprofile');
+    }
 }
