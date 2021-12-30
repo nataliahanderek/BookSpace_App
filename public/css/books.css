@@ -5,7 +5,8 @@ section[class="my-books"] {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5em;
     padding: 2em;
-    overflow: auto;
+    /* TUTAJ ZROBIŁAM ZMIANY Z OVERFLOW */
+    /* overflow: auto; */
 }
 
 .my-books > div > img {
@@ -32,7 +33,7 @@ section[class="my-books"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
     border-radius: 20px 20px 20px 20px;
-    height: 25em;
+    /* height: 25em; */
 
     display: flex;
     flex-direction: column;

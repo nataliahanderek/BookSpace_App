@@ -10,5 +10,6 @@ Routing::get('registration', 'DefaultController');
 Routing::get('mybookshelf', 'DefaultController');
 Routing::get('bookforbook', 'DefaultController');
 Routing::get('bookprofile', 'DefaultController');
+Routing::get('myprofile', 'DefaultController');
 
 Routing::run($path);

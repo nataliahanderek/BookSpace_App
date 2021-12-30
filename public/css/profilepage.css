@@ -1,0 +1,164 @@
+
+
+section[class="profile"] {
+    display: flex;
+    margin: 3em;
+    padding: 0em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+}
+
+.profile > div > img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.profile > div > div {
+    height: 20%;
+    color: white;
+    margin: 0.2em;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile > div {
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    border-radius: 20px 20px 20px 20px;
+    height: 25em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font: italic normal bold 25px/24px Segoe UI;
+    margin: 0.5em;
+}
+
+h3 {
+    font: normal normal normal 20px/27px Segoe UI;
+    margin: 0.5em;
+}
+
+.my-bookpoints {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 1em 2em;
+}
+
+.log-out-button {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+    padding: 0.8em 1em;
+}
+
+.recently-added-layer {
+    margin: 3em 0em 1.5em 0em;
+    width: 120vh;
+    height: 20em;
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    margin: 0em 0em 2em 0em;
+
+    display: flex;
+    align-items: center;
+}
+
+section[class="recently-added"] {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 3em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.recently-added > div > img {
+    height: 18em;
+    width: 13em;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.my-read-books-layer {
+    margin: 3em 0em 1.5em 0em;
+    width: 120vh;
+    height: 20em;
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    margin: 0em 0em 2em 0em;
+
+    display: flex;
+    align-items: center;
+}
+
+section[class="my-read-books"] {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 3em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.my-read-books > div > img {
+    height: 18em;
+    width: 13em;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.my-books-for-books-layer {
+    margin: 3em 0em 1.5em 0em;
+    width: 120vh;
+    height: 20em;
+    background-color: transparent;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    margin: 0em 0em 2em 0em;
+
+    display: flex;
+    align-items: center;
+}
+
+section[class="my-books-for-books"] {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 3em;
+    padding: 2em;
+    overflow: auto;
+}
+
+.my-books-for-books > div > img {
+    height: 18em;
+    width: 13em;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+p {
+    font: normal normal normal 15px/15px Segoe UI;
+    color: #A58C78;
+    padding: 0.5em;
+    margin: 3em 0em 0em 3em;
+}

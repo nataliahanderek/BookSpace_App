@@ -102,6 +102,7 @@ h3 {
     border: 1px solid #A58C78;
     border-radius: 20px;
     opacity: 0.8;
+    position: none;
 }
 
 .description > p {
@@ -118,18 +119,17 @@ h3 {
     background-color: transparent;
     border: 1px solid #A58C78;
     border-radius: 20px;
-    opacity: 0.8;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-
-li {
+ 
+.details {
     text-decoration: none;
     background-color: transparent;
-    font: normal normal normal 15px/15px Segoe UI;
-    color: #A58C78;
+    font: normal normal normal 20px/20px Segoe UI;
     padding: 0.3em 3em;
     color: #A58C78;
 }
+
