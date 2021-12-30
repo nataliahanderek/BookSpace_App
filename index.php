@@ -11,5 +11,6 @@ Routing::get('mybookshelf', 'DefaultController');
 Routing::get('bookforbook', 'DefaultController');
 Routing::get('bookprofile', 'DefaultController');
 Routing::get('myprofile', 'DefaultController');
+Routing::get('allbooks', 'DefaultController');
 
 Routing::run($path);
