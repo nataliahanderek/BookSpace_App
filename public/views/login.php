@@ -13,13 +13,20 @@
             <img src="public/img/logo.svg">
         </div>
         <div class="login-container">
-            <form class="login">
-                <input name="email" type="text" placeholder="email or login">
+            <form class="login" action="login" method="POST">
+                <div class="messages">
+                    <?php if(isset($messages)) {
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
+                <input name="user-login" type="text" placeholder="login">
                 <input name="password" type="password" placeholder="password">
-                <!-- <button name="login-button">Log in</button> -->
-                <a href="mybookshelf" class="login-button">Log in</a>
+                <button name="login-button" type="submit">Log in</button>
+                <!-- <a type="submit" href="mybookshelf" class="login-button">Log in</a> -->
                 <a href="registration" class="want-sign-up-button">Do you want to create new account? Sign up.</a>
-                <!-- <button name="want-sign-up">Do you want to create new account? Sign up.</button-2> -->
             </form>
         </div>
     </div>

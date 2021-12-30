@@ -47,6 +47,18 @@ form.login {
     margin: 7em;
 }
 
+button[name="login-button"] {
+    background: #D6BFAD 0% 0% no-repeat padding-box;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.9;
+
+    width: 30%;
+    color: #A58C78;
+    margin: 1em;
+    font: normal normal normal 40px/55px Segoe UI;
+}
+
 .login-button {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
@@ -72,6 +84,7 @@ input {
     margin: 0.5em;
     width: 70%;
     font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
 }
 
 .want-sign-up-button {
@@ -81,6 +94,15 @@ input {
     border: none;
     background-color: transparent;
 }
+
+/*button[name="want-sign-up"] {
+    text-align: left;
+    font: normal normal normal 15x/20px Segoe UI;
+    color: #A58C78;
+    border: none;
+    background-color: transparent;
+} */
+
 
 
 
@@ -116,6 +138,7 @@ input {
     margin: 0.5em;
     width: 50em;
     font: normal normal normal 15px/10px Segoe UI;
+    color: #A58C78;
 }
 
 form.search {
