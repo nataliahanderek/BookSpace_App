@@ -34,8 +34,8 @@ class DefaultController extends AppController {
         $this->render('myprofile');
     }
 
-    public function allbooks()
+    /*public function allbooks()
     {
         $this->render('allbooks');
-    }
+    }*/
 }

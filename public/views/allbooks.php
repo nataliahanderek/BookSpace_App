@@ -148,41 +148,15 @@
                         </div>
                     </header>
                     <section class="my-books">
+                        <?php foreach ($bookshelf as $book): ?>
                         <div id="book1">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                             <div>
-                                <h2><a href="bookprofile">Title</a></h2>
-                                <h3>Author</h3>
+                                <h2><a href="bookprofile"><?= $book->getTitleEng(); ?></a></h2>
+                                <h3><?= $book->getAuthorSurname(); ?></h3>
                             </div>
                         </div>
-                        <div id="book2">
-                            <img src="public/img/uploads/book1.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                        </div>
-                        <div id="book3">
-                            <img src="public/img/uploads/book1.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                        </div>
-                        <div id="book4">
-                            <img src="public/img/uploads/book1.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                        </div>
-                        <div id="book5">
-                            <img src="public/img/uploads/book1.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </section>
                 </main>
             </div>
