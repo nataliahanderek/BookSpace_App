@@ -25,7 +25,6 @@
                 <input name="user-login" type="text" placeholder="login">
                 <input name="password" type="password" placeholder="password">
                 <button name="login-button" type="submit">Log in</button>
-                <!-- <a type="submit" href="mybookshelf" class="login-button">Log in</a> -->
                 <a href="registration" class="want-sign-up-button">Do you want to create new account? Sign up.</a>
             </form>
         </div>

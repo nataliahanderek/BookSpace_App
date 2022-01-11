@@ -6,16 +6,16 @@
     <link rel="stylesheet" type="text/css" href="public/css/bookpage.css">
     <link rel="stylesheet" type="text/css" href="public/css/profilepage.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>Book for book | BookSpace</title>
 </head>
 
 <body>
+<?php include 'cookieSecurity.php'; ?>
     <div class="base-container">
         <div class="top-menu">
             <div class="search-bar">
-                <form class="search">
-                    <input placeholder="Search...">
-                </form>
+                <input placeholder="Search...">
             </div>
             <ul>
                 <li>
@@ -51,9 +51,9 @@
                     <div class="my-bookpoints">
                         My Bookpoints: 6
                     </div>
-                    <div class="log-out">
-                        <a href="logout" class="log-out-button">Log out</a>
-                    </div>
+                    <form class="log-out" id="logout" action="logOut" method="get">
+                        <a class="log-out-button" onclick="logout()">Log out</a>
+                    </form>
                 </div>
             </div>
             <div class="right-site-book">
@@ -61,19 +61,19 @@
                 <div class="recently-added-layer">
                     <section class="recently-added"> 
                         <div id="book1">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book2">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book3">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book4">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book5">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                     </section>
                 </div>
@@ -81,13 +81,13 @@
                 <div class="my-read-books-layer">
                     <section class="my-read-books"> 
                         <div id="book1">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book2">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book3">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                     </section>                    
                 </div>
@@ -95,19 +95,19 @@
                 <div class="my-books-for-books-layer">
                     <section class="my-books-for-books"> 
                         <div id="book1">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book2">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book3">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book4">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                         <div id="book5">
-                            <img src="public/img/uploads/book1.jpg">
+                            <img src="public/img/uploads/thelittleprince.jpg">
                         </div>
                     </section>                    
                 </div>
@@ -115,3 +115,4 @@
         </div>
     </div>
 </body>
+

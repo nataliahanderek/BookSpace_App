@@ -19,6 +19,10 @@ class UserRepository extends Repository
             return null;
         }
 
+        $cookieName= 'Cookie';
+        $cookieValue = $login;
+        setcookie($cookieName, $cookieValue, time() + (3600 * 24 * 10), "/");
+
         return new User(
             $user['name'],
             $user['surname'],
@@ -26,5 +30,19 @@ class UserRepository extends Repository
             $user['login'],
             $user['password']
         );
+    }
+
+    public function addUser(User $user) {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO users (name, surname, email, login, password) VALUES (?,?,?,?,?)
+        ');
+
+        $stmt->execute([
+            $user->getName(),
+            $user->getSurname(),
+            $user->getEmail(),
+            $user->getLogin(),
+            $user->getPassword(),
+        ]);
     }
 }

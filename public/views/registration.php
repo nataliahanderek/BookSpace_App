@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>Registration | BookSpace</title>
 </head>
 
@@ -13,15 +14,22 @@
             <img src="public/img/logo.svg">
         </div>
         <div class="login-container">
-            <form class="login">
+            <form class="login" action="registration" method="POST">
+                <div class="messages">
+                    <?php if(isset($messages)) {
+                        foreach ($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
                 <input name="name" type="text" placeholder="name">
-                <input name="last-name" type="text" placeholder="last name">
+                <input name="surname" type="text" placeholder="surname">
                 <input name="email" type="text" placeholder="email">
-                <input name="login" type="text" placeholder="login">
+                <input name="user-login" type="text" placeholder="login">
                 <input name="password" type="password" placeholder="password">
                 <input name="repeat-password" type="password" placeholder="repeat password">
-                <a href="mybookshelf" class="login-button">Sign up</a>
-                <!-- <button name="login-button">Sign up</button> -->
+                <button name="login-button">Sign up</button>
             </form>
         </div>
     </div>

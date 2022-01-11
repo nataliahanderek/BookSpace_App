@@ -5,16 +5,16 @@
     <link rel="stylesheet" type="text/css" href="public/css/books.css">
     <link rel="stylesheet" type="text/css" href="public/css/bookfor.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>All books | BookSpace</title>
 </head>
 
 <body>
+<?php include 'cookieSecurity.php'; ?>
     <div class="base-container">
         <div class="top-menu">
             <div class="search-bar">
-                <form class="search">
                     <input placeholder="Search...">
-                </form>
             </div>
             <ul>
                 <li>
@@ -163,3 +163,13 @@
         </div>
     </div>
 </body>
+
+<template id="book-template">
+    <div id="">
+        <img src="">
+        <div>
+            <h2><a href="bookprofile">title_eng</a></h2>
+            <h3>author_surname</h3>
+        </div>
+    </div>
+</template>

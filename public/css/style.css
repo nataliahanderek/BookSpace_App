@@ -47,6 +47,18 @@ form.login {
     margin: 7em;
 }
 
+input {
+    background-color: #D6BFAD;
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    opacity: 0.9;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 70%;
+    font: normal normal normal 20px/10px Segoe UI;
+    color: #A58C78;
+}
+
 button[name="login-button"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
@@ -75,7 +87,7 @@ button[name="login-button"] {
     align-items: center;
 }
 
-input {
+.top-menu > ul > input {
     background-color: #D6BFAD;
     border: 1px solid #A58C78;
     border-radius: 20px;
@@ -89,7 +101,7 @@ input {
 
 .want-sign-up-button {
     text-align: left;
-    font: normal normal normal 15x/20px Segoe UI;
+    font: normal normal normal 15px/20px Segoe UI;
     color: #A58C78;
     border: none;
     background-color: transparent;
@@ -102,6 +114,14 @@ input {
     border: none;
     background-color: transparent;
 } */
+
+
+.no-valid {
+    border: 3px solid red;
+    border-radius: 20px;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
 
 
 
@@ -131,23 +151,22 @@ input {
     opacity: 0.9;
 }
 
-.search > input {
+.search-bar > input {
     background-color: white;
     border: 1px solid #A58C78;
     border-radius: 20px;
     margin: 0.5em;
+    padding: 0em 1em;
     width: 50em;
     font: normal normal normal 15px/10px Segoe UI;
     color: #A58C78;
-}
 
-form.search {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 20em;
-    height: 3em;
+    height: 2em;
 }
 
 .top-menu > ul {

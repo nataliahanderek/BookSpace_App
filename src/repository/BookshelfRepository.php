@@ -10,12 +10,11 @@ class BookshelfRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-                                                    select b.title_eng, au.author_name, au.author_surname, bf.bookcover
-                                                        from (((books b
-                                                            join books_features bf on (b.book_id = bf.book_id))
-                                                            join rel_features_authors rel on (b.book_id = rel.book_id))
-                                                            join authors au on (au.author_id = rel.author_id))
-;
+            select b.title_eng, au.author_name, au.author_surname, bf.bookcover
+                from (((books b
+                    join books_features bf on (b.book_id = bf.book_id))
+                    join rel_features_authors rel on (b.book_id = rel.book_id))
+                    join authors au on (au.author_id = rel.author_id))
                                             ');
 
         $stmt->execute();
@@ -32,23 +31,24 @@ class BookshelfRepository extends Repository
         }
         
         return $result;
-        
+    }
 
-        /*$stmt = $this->database->connect()->prepare('
-                                            SELECT * FROM books WHERE book_id = :id
-                                            ');
+    public function getBookBySearch(string $searchString) {
 
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            select b.title_eng, au.author_name, au.author_surname, bf.bookcover
+                from (((books b
+                    join books_features bf on (b.book_id = bf.book_id))
+                    join rel_features_authors rel on (b.book_id = rel.book_id))
+                    join authors au on (au.author_id = rel.author_id))
+                WHERE LOWER(b.title_eng) LIKE :search OR LOWER(b.title_org) LIKE :search OR LOWER(au.author_name) LIKE :search OR LOWER(au.author_surname) LIKE :search
+        ');
+
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
 
-        $bookshelf = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($bookshelf == false) {
-            return null;
-        }
-
-        return new Bookshlef(
-            $bookshelf['title_eng']
-        );*/
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

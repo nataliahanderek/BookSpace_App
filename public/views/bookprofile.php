@@ -10,12 +10,11 @@
 </head>
 
 <body>
+<?php include 'cookieSecurity.php'; ?>
     <div class="base-container">
         <div class="top-menu">
             <div class="search-bar">
-                <form class="search">
-                    <input placeholder="Search...">
-                </form>
+                <input placeholder="Search...">
             </div>
             <ul>
                 <li>
