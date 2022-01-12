@@ -13,6 +13,7 @@ search.addEventListener("keyup", function (event){
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
         }).then(function (response) {
+            console.log(response.json());
             return response.json();
         }).then(function (books) {
             booksContainer.innerHTML = "";
@@ -22,6 +23,7 @@ search.addEventListener("keyup", function (event){
 });
 
 function loadBooks(books) {
+    console.log(JSON.stringify(books));
     books.forEach(book => {
         console.log(book);
         createBook(book);
@@ -31,8 +33,8 @@ function loadBooks(books) {
 function createBook(book) {
     const template = document.querySelector("#book-template");
     const clone = template.content.cloneNode(true);
-    const div = clone.querySelector("div");
-    div.id = book.id;
+    /*const div = clone.querySelector("div");
+    div.id = book.id;*/
 
     const bookcover = clone.querySelector("img");
     bookcover.src = '/public/img/uploads/${book.bookcover}';
