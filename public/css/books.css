@@ -3,7 +3,7 @@
 section[class="my-books"] {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5em;
+    grid-gap: 2em;
     padding: 2em;
     /* TUTAJ ZROBIŁAM ZMIANY Z OVERFLOW */
     /* overflow: auto; */
@@ -44,6 +44,7 @@ h2 {
     font: italic normal bold 25px/24px Segoe UI;
     margin: 0.1em;
     overflow: hidden;
+    padding: 0em 0em 1em 0em;
 }
 
 h3 {

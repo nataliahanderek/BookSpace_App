@@ -46,96 +46,7 @@
                     <div class="my-bookpoints">
                         My Bookpoints: 6
                     </div>
-                    <div class="genres-list-class">
-                        <label class="genres-list">art
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">biography
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label> 
-                        <label class="genres-list">business
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">classics
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">comics
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">cookbooks
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">fantasy
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">fiction
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">history
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">horror
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">music
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">nonfiction
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">poatry
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">psychology
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">romance
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">science
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">science fiction
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">self care
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">sports
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">thriller
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">travel
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="genres-list">Young Adult
-                            <input type="checkbox" checked="checked">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
+                    <?php include 'genresCheckbox.php'; ?>
                 </div>
             </div>
             <div class="right-site">
@@ -146,56 +57,18 @@
                         </div>
                     </header>
                     <section class="my-books">
+                        <?php foreach ($bookforbook as $book): ?>
                         <div id="book1">
-                            <img src="public/img/uploads/thelittleprince.jpg">
+                            <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                             <div>
-                                <h2><a href="bookprofile">Title</a></h2>
-                                <h3>Author</h3>
+                                <h2><a href="bookprofile"><?= $book->getTitleEng(); ?></a></h2>
+                                <h3><?= $book->getAuthorSurname(); ?></h3>
                             </div>
                             <div class="exchange">
                                 <a href="#" class="exchange-button">EXCHANGE</a>
                             </div>
                         </div>
-                        <div id="book2">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                            <div class="exchange">
-                                <a href="#" class="exchange-button">EXCHANGE</a>
-                            </div>
-                        </div>
-                        <div id="book3">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                            <div class="exchange">
-                                <a href="#" class="exchange-button">EXCHANGE</a>
-                            </div>
-                        </div>
-                        <div id="book4">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                            <div class="exchange">
-                                <a href="#" class="exchange-button">EXCHANGE</a>
-                            </div>
-                        </div>
-                        <div id="book5">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                            <div>
-                                <h2>Title</h2>
-                                <h3>Author</h3>
-                            </div>
-                            <div class="exchange">
-                                <a href="#" class="exchange-button">EXCHANGE</a>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </section>
                 </main>
             </div>

@@ -19,6 +19,12 @@ class BookshelfController extends AppController {
         $this->render('allbooks', ['bookshelf' => $bookshelf]);
     }
 
+    public function bookforbook()
+    {
+        $bookForBook = $this->bookshelfRepository->getBookForBook();
+        $this->render('bookforbook', ['bookforbook' => $bookForBook]);
+    }
+
     public function search() {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 

@@ -39,10 +39,10 @@
             <div class="left-site">
                 <section class="book">
                     <div id="book1">
-                        <img src="public/img/uploads/book1.jpg">
+                        <img src="public/img/uploads/thelittleprince.jpg">
                         <div>
-                            <h2>Title</h2>
-                            <h3>Author</h3>
+                            <h2>The Little Prince</h2>
+                            <h3>de Saint-Exupery</h3>
                         </div>
                     </div>
                 </section>

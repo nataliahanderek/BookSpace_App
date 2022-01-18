@@ -33,6 +33,36 @@ class BookshelfRepository extends Repository
         return $result;
     }
 
+    public function getBookForBook() : array {
+
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            select b.title_eng, au.author_name, au.author_surname, bf.bookcover, ud.if_bookforbook
+                from ((((books b
+                    join users_database ud on (ud.book_id = b.book_id))
+                    join books_features bf on (b.book_id = bf.book_id))
+                    join rel_features_authors rel on (b.book_id = rel.book_id))
+                    join authors au on (au.author_id = rel.author_id))
+                WHERE ud.if_bookforbook = \'1\'
+                                            ');
+
+        $stmt->execute();
+        $bookForBook = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($bookForBook as $book) {
+            $result[] = new Bookshelf(
+                $book['title_eng'],
+                $book['author_name'],
+                $book['author_surname'],
+                $book['bookcover'],
+                $book['if_bookforbook']
+            );
+        }
+
+        return $result;
+    }
+
     public function getBookBySearch(string $searchString) {
 
         $searchString = '%' . strtolower($searchString) . '%';
