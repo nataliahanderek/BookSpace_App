@@ -21,7 +21,7 @@ class SecurityController extends AppController
         }
 
         $login = $_POST['user-login'];
-        $password = md5($_POST['password']);
+        $password = $_POST['password'];
 
         $user = $this->userRepository->getUser($login);
 
@@ -33,12 +33,9 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Login does not exist']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if(!password_verify($password, $user->getPassword())) {
             return $this->render('login', ['messages' => ['Incorrect password']]);
         }
-
-        //return $this->render('mybookshelf');
-        //to ---^ inny sposob tego -->
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/mybookshelf");
@@ -61,7 +58,7 @@ class SecurityController extends AppController
             return $this->render('registration', ['messages' => ['Please provide proper password']]);
         }
 
-        $user = new User($name, $surname, $email, $login, md5($password), $name, $surname);
+        $user = new User($name, $surname, $email, $login, password_hash($password, PASSWORD_DEFAULT), $name, $surname);
         $this->userRepository->addUser($user);
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
