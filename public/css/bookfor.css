@@ -25,7 +25,7 @@
     background-color: white;
     margin: 0.5em;
     text-align: center;
-    font: normal normal normal 20px/10px Segoe UI;
+    font: normal normal normal 20px/20px Segoe UI;
     color: #A58C78;
     padding: 1em 2em;
 }
@@ -48,7 +48,7 @@ header {
     background-color: white;
     margin: 0.5em;
     text-align: center;
-    font: normal normal normal 35px/20px Segoe UI;
+    font: normal normal normal 35px/35px Segoe UI;
     letter-spacing: 1em;
     color: #A58C78;
 }
@@ -76,4 +76,36 @@ header {
 
 ul {
     position: relative;
+}
+
+@media only screen and (max-device-width: 1178px) {
+    .my-bookpoints {
+        font: normal normal normal 25px/30px Segoe UI;
+        padding: 0.5em 1.3em;
+    }
+
+    .add-book-for-book {
+        padding: 0.5em 1.3em;
+    }
+
+    .add-book-for-book-button {
+        font: normal normal normal 25px/30px Segoe UI;
+    }
+
+    .add-book-for-book > i {
+        font-size: 1.5em;
+    }
+
+    main {
+        margin: 0em 0em;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        width: 90%;
+        margin-bottom: 0.1em;
+    }
 }

@@ -23,16 +23,26 @@ body {
     opacity: 0.8;
     position: absolute;
     z-index: 1;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .logo {
-    width: 35%;
+    width: 50%;
     text-align: center;
     z-index: 2;
 }
 
+.logo > img {
+    width: 32em;
+    height: 32em;
+    margin: 0em 0em 0em 1em
+}
+
 .login-container {
-    width: 40%;
+    width: 50%;
     z-index: 2;
 }
 
@@ -42,16 +52,15 @@ form.login {
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 40vh;
+    height: 60vh;
     z-index: 2;
-    margin: 7em;
+    margin: 2em 1em 1em 6em;
 }
 
 input {
     background-color: #D6BFAD;
     border: 1px solid #A58C78;
     border-radius: 20px;
-    opacity: 0.9;
     padding: 0.5em;
     margin: 0.5em;
     width: 70%;
@@ -63,9 +72,8 @@ button[name="login-button"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
     border-radius: 20px;
-    opacity: 0.9;
 
-    width: 30%;
+    width: 4em;
     color: #A58C78;
     margin: 1em;
     font: normal normal normal 40px/55px Segoe UI;
@@ -75,7 +83,6 @@ button[name="login-button"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
     border-radius: 20px;
-    opacity: 0.9;
     
     width: 30%;
     color: #A58C78;
@@ -123,6 +130,64 @@ button[name="login-button"] {
     outline: none;
 }
 
+@media only screen and (max-device-width: 950px) {
+    .container {
+        flex-direction: column;
+    }
+
+    * {
+        font-size: 36px;
+    }
+
+    .layer {
+        width: 80%;
+        height: 96%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .logo {
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+
+    form.login {
+        width: 100%;
+        margin: 1em;
+        height: 80%;
+        justify-content: space-between;
+    }
+
+    .logo > img {
+        width: 80%;
+        height: 90%;
+        margin: 0em;
+        padding: 1em 0em 0em 0em;
+    }
+
+    input {
+        width: 85%;
+        margin: 0.2em;
+    }
+
+    button[name="login-button"] {
+        margin: 1em 0em 0.5em 0em;
+        font: normal normal normal 25px/40px Segoe UI;
+        width: 30%;
+    }
+}
+
 
 
 
@@ -134,7 +199,7 @@ button[name="login-button"] {
 
 
 
-.base-contariner {
+.base-container {
     display: flex;
     flex-direction: column;
 }
@@ -148,7 +213,6 @@ button[name="login-button"] {
 
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
-    opacity: 0.9;
 }
 
 .search-bar > input {
@@ -214,7 +278,6 @@ li {
 .left-site > img {
     width: 15vw;
     display: flex;
-    flex-direction: centre;
     margin: 3em auto;
 }
 
@@ -239,7 +302,7 @@ li {
     background-color: white;
     margin: 0.5em;
     text-align: center;
-    font: normal normal normal 20px/10px Segoe UI;
+    font: normal normal normal 20px/20px Segoe UI;
     color: #A58C78;
     padding: 1em 2em;
 }
@@ -250,14 +313,14 @@ li {
     background-color: white;
     margin: 0.5em;
     text-align: center;
-    font: normal normal normal 20px/10px Segoe UI;
+    font: normal normal normal 20px/20px Segoe UI;
     color: #A58C78;
     padding: 1em 2em;
 }
 
 .genres {
     width: 20vw;
-    height: 1100px;
+    height: auto;
     margin: 2em 3em;
     background: #D6BFAD66 0% 0% no-repeat padding-box;
     border-radius: 20px;
@@ -381,7 +444,7 @@ header {
     background-color: white;
     margin: 0.5em;
     text-align: center;
-    font: normal normal normal 35px/20px Segoe UI;
+    font: normal normal normal 35px/35px Segoe UI;
     letter-spacing: 1em;
     color: #A58C78;
 }
@@ -391,4 +454,115 @@ header {
     width: 15em;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
+}
+
+@media only screen and (max-device-width: 1178px) {
+    .top-menu {
+        height: 80px;
+    }
+
+    .search-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0em 0em 0em 0em;
+        width: 15%;
+    }
+
+    .search-bar > input {
+        width: 80%;
+    }
+
+    .top-menu > ul {
+        padding: 0em;
+        width: 90%;
+    }
+
+    .header-button {
+        font: normal normal normal 20px/25px Segoe UI;
+        margin: 0.1em;
+    }
+
+    i.fas.fa-user-alt {
+        display: none;
+    }
+
+    i.fas.fa-book-open {
+    display: none;
+    }
+
+    i.fas.fa-bell {
+        display: none;
+    }
+
+    i.fas.fa-exchange-alt {
+        display: none;
+    }
+
+    .down-site {
+        flex-direction: column;
+    }
+
+    .left-site {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .left-site > img {
+        display: none;
+    }
+
+    .genres {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 96%;
+        height: 90px;
+        margin: 1em 0.5em 0.5em 0.5em
+    }
+
+    .books-on-my-shelf {
+        font: normal normal normal 25px/30px Segoe UI;
+        padding: 0.5em 1.3em;
+    }
+
+    .books-I-have-read {
+        font: normal normal normal 25px/30px Segoe UI;
+        padding: 0.5em 1.3em;
+    }
+
+    .add-book {
+        padding: 0.5em 1.3em;
+    }
+
+    .add-book-button {
+        font: normal normal normal 25px/30px Segoe UI;
+    }
+
+    .add-book > i {
+        font-size: 1.5em;
+    }
+
+    .genres-list-class {
+        display: none;
+    }
+
+    .my-bookshelf-header {
+        font: normal normal normal 35px/35px Segoe UI;
+        letter-spacing: 0.8em;
+        letter-spacing: 1em;
+    }
+
+    main {
+        margin: 0em 0em;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        width: 90%;
+        margin-bottom: 0.1em;
+    }
 }

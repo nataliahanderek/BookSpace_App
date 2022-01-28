@@ -96,13 +96,12 @@ h3 {
 
 .description-layer {
     margin: 3em 0em 1.5em 0em;
-    width: 120vh;
+    width: 95%;
     height: 20vw;
     background-color: transparent;
     border: 1px solid #A58C78;
     border-radius: 20px;
     opacity: 0.8;
-    position: none;
 }
 
 .description > p {
@@ -128,8 +127,8 @@ h3 {
 .details {
     text-decoration: none;
     background-color: transparent;
-    font: normal normal normal 20px/20px Segoe UI;
-    padding: 0.3em 3em;
+    font: normal normal normal 15px/15px Segoe UI;
+    padding: 0.3em 1em;
     color: #A58C78;
 }
 
