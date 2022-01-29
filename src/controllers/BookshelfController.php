@@ -3,14 +3,17 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Bookshelf.php';
 require_once __DIR__.'/../repository/BookshelfRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class BookshelfController extends AppController {
 
     private $bookshelfRepository;
+    private $userRepository;
 
     public function __construct()
     {
         $this->bookshelfRepository = new BookshelfRepository();
+        $this->userRepository = new UserRepository();
     }
 
     public function allbooks()
@@ -23,6 +26,22 @@ class BookshelfController extends AppController {
     {
         $bookForBook = $this->bookshelfRepository->getBookForBook();
         $this->render('bookforbook', ['bookforbook' => $bookForBook]);
+    }
+
+    public function mybookshelf() {
+        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+        $userLogin = $user->getLogin();
+        $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
+        $this->render('mybookshelf', ['mybookshelf' => $myBookshelf, 'user' => $user]);
+    }
+
+    public function myprofile()  {
+        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+        $userLogin = $user->getLogin();
+        $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
+        $myReadBooks = $this->bookshelfRepository->getMyReadBooks($userLogin);
+        $myBookForBook = $this->bookshelfRepository->getMyBookForBook($userLogin);
+        $this->render('myprofile', ['mybookshelf' => $myBookshelf, 'user' => $user, 'myreadbooks' => $myReadBooks, 'mybookforbook' => $myBookForBook]);
     }
 
     public function search() {

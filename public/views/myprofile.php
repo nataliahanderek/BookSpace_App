@@ -42,8 +42,8 @@
                     <div id="profilephoto">
                         <img src="public/img/uploads/profilephoto.jpg">
                         <div>
-                            <h2>nickname</h2>
-                            <h3>name</h3>
+                            <h2><?= $user->getLogin(); ?></h2>
+                            <h3><?= $user->getName(); ?></h3>
                         </div>
                     </div>
                 </section>
@@ -59,56 +59,32 @@
             <div class="right-site-book">
                 <p>Recently added</p>
                 <div class="recently-added-layer">
-                    <section class="recently-added"> 
-                        <div id="book1">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book2">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book3">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book4">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book5">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
+                    <section class="recently-added">
+                        <?php foreach ($mybookshelf as $book): ?>
+                            <div id="book1">
+                                <img src="public/img/uploads/<?= $book->getBookcover() ?>">
+                            </div>
+                        <?php endforeach; ?>
                     </section>
                 </div>
                 <p>My read books</p>
                 <div class="my-read-books-layer">
-                    <section class="my-read-books"> 
-                        <div id="book1">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book2">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book3">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
+                    <section class="my-read-books">
+                        <?php foreach ($myreadbooks as $book): ?>
+                            <div id="book1">
+                                <img src="public/img/uploads/<?= $book->getBookcover() ?>">
+                            </div>
+                        <?php endforeach; ?>
                     </section>                    
                 </div>
                 <p>My books for books</p>
                 <div class="my-books-for-books-layer">
-                    <section class="my-books-for-books"> 
-                        <div id="book1">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book2">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book3">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book4">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
-                        <div id="book5">
-                            <img src="public/img/uploads/thelittleprince.jpg">
-                        </div>
+                    <section class="my-books-for-books">
+                        <?php foreach ($mybookforbook as $book): ?>
+                            <div id="book1">
+                                <img src="public/img/uploads/<?= $book->getBookcover() ?>">
+                            </div>
+                        <?php endforeach; ?>
                     </section>                    
                 </div>
             </div>

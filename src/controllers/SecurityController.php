@@ -26,14 +26,17 @@ class SecurityController extends AppController
         $user = $this->userRepository->getUser($login);
 
         if(!$user) {
+            $this->logOut();
             return $this->render('login', ['messages' => ['User does not exist']]);
         }
 
         if ($user->getLogin() !== $login) {
+            $this->logOut();
             return $this->render('login', ['messages' => ['Login does not exist']]);
         }
 
         if(!password_verify($password, $user->getPassword())) {
+            $this->logOut();
             return $this->render('login', ['messages' => ['Incorrect password']]);
         }
 

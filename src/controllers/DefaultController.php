@@ -14,10 +14,10 @@ class DefaultController extends AppController {
         $this->render('registration');
     }
 
-    public function mybookshelf()
+    /*public function mybookshelf()
     {
         $this->render('mybookshelf');
-    }
+    }*/
 
     /*public function bookforbook()
     {
