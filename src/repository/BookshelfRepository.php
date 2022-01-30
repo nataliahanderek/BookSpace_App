@@ -7,7 +7,6 @@ require_once __DIR__ . '/../models/User.php';
 class BookshelfRepository extends Repository
 {
     public function getBookshelf(): array {
-
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
@@ -22,16 +21,22 @@ class BookshelfRepository extends Repository
                 $book['title_eng'],
                 $book['author_name'],
                 $book['author_surname'],
-                $book['bookcover']
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
             );
             
         }
-        
         return $result;
     }
 
     public function getBookForBook() : array {
-
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
@@ -47,10 +52,17 @@ class BookshelfRepository extends Repository
                 $book['title_eng'],
                 $book['author_name'],
                 $book['author_surname'],
-                $book['bookcover']
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
             );
         }
-
         return $result;
     }
 
@@ -71,10 +83,17 @@ class BookshelfRepository extends Repository
                 $book['title_eng'],
                 $book['author_name'],
                 $book['author_surname'],
-                $book['bookcover']
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
             );
         }
-
         return $result;
     }
 
@@ -95,10 +114,17 @@ class BookshelfRepository extends Repository
                 $book['title_eng'],
                 $book['author_name'],
                 $book['author_surname'],
-                $book['bookcover']
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
             );
         }
-
         return $result;
     }
 
@@ -119,10 +145,17 @@ class BookshelfRepository extends Repository
                 $book['title_eng'],
                 $book['author_name'],
                 $book['author_surname'],
-                $book['bookcover']
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
             );
         }
-
         return $result;
     }
 
@@ -140,4 +173,91 @@ class BookshelfRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getCountOfMyBooks($userLogin): int {
+        $stmt = $this->database->connect()->prepare('
+            SELECT count(login) FROM vbooks_authors_userdatabase
+                WHERE login = :userLogin;
+        ');
+
+        $stmt->bindParam(':userLogin', $userLogin, PDO::PARAM_INT);
+        $stmt->execute();
+        $countBooks = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $countBooks['count'];
+    }
+
+    public function getCountMyReadBooks($userLogin): int {
+        $stmt = $this->database->connect()->prepare('
+            SELECT count(login) FROM vbooks_authors_userdatabase_read
+                WHERE login = :userLogin AND if_read = \'1\';
+        ');
+
+        $stmt->bindParam(':userLogin', $userLogin, PDO::PARAM_INT);
+        $stmt->execute();
+        $countReadBooks = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $countReadBooks['count'];
+    }
 }
+
+/*
+    public function getBookProfile(int $book_id): Bookshelf
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM vbook_features
+                WHERE book_id = :book_id
+                                            ');
+
+        $stmt->bindParam(':book_id', $book_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $bookProfile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $bookFeatures = new Bookshelf(
+            $bookProfile['title_eng'],
+            $bookProfile['author_name'],
+            $bookProfile['author_surname'],
+            $bookProfile['bookcover'],
+            $bookProfile['book_id'],
+            $bookProfile['description'],
+            $bookProfile['release_date'],
+            $bookProfile['pages'],
+            $bookProfile['cover_type'],
+            $bookProfile['genres'],
+            $bookProfile['title_org'],
+            $bookProfile['language']
+        );
+        return $bookFeatures;
+    }*/
+
+    /*public function getBookProfile(int $book_id) {
+        $result = [];
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM vbook_features
+                WHERE book_id = :book_id
+                                            ');
+
+        $stmt->bindParam(':book_id', $book_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $bookProfile = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($bookProfile as $book) {
+            $result[] = new Bookshelf(
+                $book['title_eng'],
+                $book['author_name'],
+                $book['author_surname'],
+                $book['bookcover'],
+                $book['book_id'],
+                $book['description'],
+                $book['release_date'],
+                $book['pages'],
+                $book['cover_type'],
+                $book['genres'],
+                $book['title_org'],
+                $book['language']
+            );
+        }
+        return $result;
+    }*/

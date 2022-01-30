@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/bookfor.css">
     <link rel="stylesheet" type="text/css" href="public/css/bookpage.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
+    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>Book profile | BookSpace</title>
 </head>
 
@@ -68,13 +69,13 @@
                     <div class="details"> 
                         <ul>
                             <li>
-                                <p>Cover: paperback</p>
+                                <p>Cover: Paperback</p>
                             </li>
                             <li>
                                 <p>Pages: 112</p>
                             </li>
                             <li>
-                                <p>Published: 5 June 1995</p>
+                                <p>Published: 6 April 1943</p>
                             </li>
                             <li>
                                 <p>Original title: La Petit Prince</p>
@@ -83,7 +84,7 @@
                                 <p>Edition Language: English</p>
                             </li>
                             <li>
-                                <p>Genre: classics</p>
+                                <p>Genre: Classics</p>
                             </li>
                         </ul>
                     </div>

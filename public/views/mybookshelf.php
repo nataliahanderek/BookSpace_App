@@ -6,6 +6,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="public/css/bookfor.css"> -->
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>My Bookshelf | BookSpace</title>
 </head>
 
@@ -44,10 +45,10 @@
                         <a href="allbooks" class="add-book-button">ADD BOOK</a>
                     </div>
                     <div class="books-on-my-shelf">
-                        Books on my shelf: 6
+                        Books on my shelf: <?php echo $countbooks; ?>
                     </div>
                     <div class="books-I-have-read">
-                        Books I have read: 4
+                        Books I have read: <?php echo $countreadbooks; ?>
                     </div>
                     <?php include 'genresCheckbox.php'; ?>
                 </div>
@@ -61,10 +62,10 @@
                     </header>
                     <section class="my-books">
                         <?php foreach ($mybookshelf as $book): ?>
-                            <div id="book1">
+                            <div id="<?= $book->getId(); ?>">
                                 <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                                 <div>
-                                    <h2><a href="bookprofile"><?= $book->getTitleEng(); ?></a></h2>
+                                    <h2><a href="bookprofile" class="goToBookProfile"><?= $book->getTitleEng(); ?></a></h2>
                                     <h3><?= $book->getAuthorSurname(); ?></h3>
                                 </div>
                             </div>

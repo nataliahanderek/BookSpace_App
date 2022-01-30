@@ -18,8 +18,12 @@ class BookshelfController extends AppController {
 
     public function allbooks()
     {
+        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+        $userLogin = $user->getLogin();
         $bookshelf = $this->bookshelfRepository->getBookshelf();
-        $this->render('allbooks', ['bookshelf' => $bookshelf]);
+        $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
+        $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
+        $this->render('allbooks', ['bookshelf' => $bookshelf, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
     }
 
     public function bookforbook()
@@ -32,7 +36,9 @@ class BookshelfController extends AppController {
         $user = $this->userRepository->getUser($_COOKIE['Cookie']);
         $userLogin = $user->getLogin();
         $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
-        $this->render('mybookshelf', ['mybookshelf' => $myBookshelf, 'user' => $user]);
+        $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
+        $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
+        $this->render('mybookshelf', ['mybookshelf' => $myBookshelf, 'user' => $user, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
     }
 
     public function myprofile()  {
@@ -43,6 +49,11 @@ class BookshelfController extends AppController {
         $myBookForBook = $this->bookshelfRepository->getMyBookForBook($userLogin);
         $this->render('myprofile', ['mybookshelf' => $myBookshelf, 'user' => $user, 'myreadbooks' => $myReadBooks, 'mybookforbook' => $myBookForBook]);
     }
+
+    /*public function bookprofile(int $book_id) {
+        $bookProfile = $this->bookshelfRepository->getBookProfile($book_id);
+        $this->render('bookprofile', ['bookprofile' => $bookProfile]);
+    }*/
 
     public function search() {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
