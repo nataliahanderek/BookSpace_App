@@ -128,6 +128,19 @@ class BookshelfRepository extends Repository
         return $result;
     }
 
+    public function getCountMyReadBooks($userLogin): int {
+        $stmt = $this->database->connect()->prepare('
+            SELECT count(login) FROM vbooks_authors_userdatabase_read
+                WHERE login = :userLogin AND if_read = \'1\';
+        ');
+
+        $stmt->bindParam(':userLogin', $userLogin, PDO::PARAM_INT);
+        $stmt->execute();
+        $countReadBooks = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $countReadBooks['count'];
+    }
+
     public function getMyBookForBook($userLogin): array {
         $result = [];
 
@@ -185,19 +198,6 @@ class BookshelfRepository extends Repository
         $countBooks = $stmt->fetch(PDO::FETCH_ASSOC);
 
         return $countBooks['count'];
-    }
-
-    public function getCountMyReadBooks($userLogin): int {
-        $stmt = $this->database->connect()->prepare('
-            SELECT count(login) FROM vbooks_authors_userdatabase_read
-                WHERE login = :userLogin AND if_read = \'1\';
-        ');
-
-        $stmt->bindParam(':userLogin', $userLogin, PDO::PARAM_INT);
-        $stmt->execute();
-        $countReadBooks = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $countReadBooks['count'];
     }
 }
 

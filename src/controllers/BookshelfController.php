@@ -18,12 +18,17 @@ class BookshelfController extends AppController {
 
     public function allbooks()
     {
-        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
-        $userLogin = $user->getLogin();
-        $bookshelf = $this->bookshelfRepository->getBookshelf();
-        $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
-        $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
-        $this->render('allbooks', ['bookshelf' => $bookshelf, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
+        if (isset($_COOKIE['Cookie'])) {
+            $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+            $userLogin = $user->getLogin();
+            $bookshelf = $this->bookshelfRepository->getBookshelf();
+            $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
+            $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
+            $this->render('allbooks', ['bookshelf' => $bookshelf, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
+        } else {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
     }
 
     public function bookforbook()
@@ -33,21 +38,32 @@ class BookshelfController extends AppController {
     }
 
     public function mybookshelf() {
-        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
-        $userLogin = $user->getLogin();
-        $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
-        $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
-        $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
-        $this->render('mybookshelf', ['mybookshelf' => $myBookshelf, 'user' => $user, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
+        if (isset($_COOKIE['Cookie'])) {
+            $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+            $userLogin = $user->getLogin();
+            $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
+            $countBooks = $this->bookshelfRepository->getCountOfMyBooks($userLogin);
+            $countReadBooks = $this->bookshelfRepository->getCountMyReadBooks($userLogin);
+            $this->render('mybookshelf', ['mybookshelf' => $myBookshelf, 'user' => $user, 'countbooks' => $countBooks, 'countreadbooks' => $countReadBooks]);
+        } else {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
     }
 
-    public function myprofile()  {
-        $user = $this->userRepository->getUser($_COOKIE['Cookie']);
-        $userLogin = $user->getLogin();
-        $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
-        $myReadBooks = $this->bookshelfRepository->getMyReadBooks($userLogin);
-        $myBookForBook = $this->bookshelfRepository->getMyBookForBook($userLogin);
-        $this->render('myprofile', ['mybookshelf' => $myBookshelf, 'user' => $user, 'myreadbooks' => $myReadBooks, 'mybookforbook' => $myBookForBook]);
+    public function myprofile()
+    {
+        if (isset($_COOKIE['Cookie'])) {
+            $user = $this->userRepository->getUser($_COOKIE['Cookie']);
+            $userLogin = $user->getLogin();
+            $myBookshelf = $this->bookshelfRepository->getMyBookshelf($userLogin);
+            $myReadBooks = $this->bookshelfRepository->getMyReadBooks($userLogin);
+            $myBookForBook = $this->bookshelfRepository->getMyBookForBook($userLogin);
+            $this->render('myprofile', ['mybookshelf' => $myBookshelf, 'user' => $user, 'myreadbooks' => $myReadBooks, 'mybookforbook' => $myBookForBook]);
+        } else {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
     }
 
     /*public function bookprofile(int $book_id) {

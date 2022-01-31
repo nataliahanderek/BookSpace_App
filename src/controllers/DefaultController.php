@@ -14,28 +14,19 @@ class DefaultController extends AppController {
         $this->render('registration');
     }
 
-    /*public function mybookshelf()
-    {
-        $this->render('mybookshelf');
-    }*/
-
-    /*public function bookforbook()
-    {
-        $this->render('bookforbook');
-    }*/
-
     public function bookprofile()
     {
         $this->render('bookprofile');
     }
 
+    /*
     public function myprofile()
     {
         $this->render('myprofile');
-    }
-
-    /*public function allbooks()
-    {
-        $this->render('allbooks');
     }*/
+
+    public function notifications()
+    {
+        $this->render('notifications');
+    }
 }

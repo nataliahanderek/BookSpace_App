@@ -109,3 +109,17 @@ ul {
         margin-bottom: 0.1em;
     }
 }
+
+/*NOTIFICATIONS SITE*/
+
+.notifications-site {
+    width: 100%;
+}
+
+.notifications-site > main {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0em;
+    text-align: center;
+    width: 100%;
+}

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/books.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/checkbox.js" defer></script>
     <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>Book for book | BookSpace</title>
 </head>

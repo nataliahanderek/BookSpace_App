@@ -457,7 +457,7 @@ header {
 
 @media only screen and (max-device-width: 1178px) {
     .top-menu {
-        height: 80px;
+        height: 100px;
     }
 
     .search-bar {
@@ -471,6 +471,7 @@ header {
 
     .search-bar > input {
         width: 80%;
+        padding: 0.5em 0.5em;
     }
 
     .top-menu > ul {
@@ -479,8 +480,9 @@ header {
     }
 
     .header-button {
-        font: normal normal normal 20px/25px Segoe UI;
+        font: normal normal normal 25px/25px Segoe UI;
         margin: 0.1em;
+        padding: 0.5em 0.5em;
     }
 
     i.fas.fa-user-alt {

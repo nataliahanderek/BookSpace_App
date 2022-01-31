@@ -9,6 +9,7 @@ Routing::get('', 'DefaultController');
 Routing::get('bookforbook', 'BookshelfController');
 Routing::get('bookprofile', 'DefaultController');
 Routing::get('logOut', 'SecurityController');
+Routing::get('notifications', 'DefaultController');
 
 Routing::post('login', 'SecurityController');
 Routing::post('registration', 'SecurityController');

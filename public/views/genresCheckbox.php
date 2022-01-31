@@ -1,6 +1,6 @@
 <div class="genres-list-class">
     <label class="genres-list">art
-        <input type="checkbox" checked="checked">
+        <input type="checkbox" id="1" onclick="myFunction()">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">biography
