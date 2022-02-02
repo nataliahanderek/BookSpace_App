@@ -7,7 +7,6 @@
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/checkbox.js" defer></script>
-    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>Book for book | BookSpace</title>
 </head>
 
@@ -29,7 +28,7 @@
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
-                    <a href="notification" class="header-button">Notifications</a>
+                    <a href="notifications" class="header-button">Notifications</a>
                 </li>
                 <li>
                     <i class="fas fa-user-alt"></i>
@@ -63,13 +62,12 @@
                             <div id="<?= $book->getId(); ?>">
                                 <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                                 <div>
-                                    <h2><a href="bookprofile"><?= $book->getTitleEng(); ?></a></h2>
-                                    <h3><?= $book->getAuthorSurname(); ?></h3>
+                                    <h3><a href="bookprofile/<?= $book->getId(); ?>"><?= $book->getAuthorSurname(); ?></a></h3>
+                                    <div class="exchange">
+                                        <a href="notifications" class="exchange-button">EXCHANGE</a>
+                                    </div>
                                 </div>
-                            <div class="exchange">
-                                <a href="#" class="exchange-button">EXCHANGE</a>
                             </div>
-                        </div>
                         <?php endforeach; ?>
                     </section>
                 </main>

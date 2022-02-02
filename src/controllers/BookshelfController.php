@@ -66,10 +66,18 @@ class BookshelfController extends AppController {
         }
     }
 
-    /*public function bookprofile(int $book_id) {
-        $bookProfile = $this->bookshelfRepository->getBookProfile($book_id);
+    public function bookprofile($id) {
+        $bookProfile = $this->bookshelfRepository->getBookProfile($id);
+        //$addBook = $this->bookshelfRepository->addBookToMyBookshelf();
+        //'addbook' => $addBook
         $this->render('bookprofile', ['bookprofile' => $bookProfile]);
-    }*/
+    }
+
+    public function addbook($id) {
+        $userid=$this->userRepository->getLoggedUserId();
+        $this->bookshelfRepository->addBookToMyBookshelf($id,$userid);
+        http_response_code(200);
+    }
 
     public function search() {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';

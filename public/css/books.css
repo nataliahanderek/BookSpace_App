@@ -41,15 +41,16 @@ section[class="my-books"] {
 }
 
 h2 {
-    font: normal normal normal 25px/24px Segoe UI;
+    font: normal normal normal 20px/22px Segoe UI;
     margin: 0.1em;
     overflow: hidden;
-    padding: 0em 0em 1em 0em;
+    padding: 0em;
+    text-align: center;
 }
 
 h3 {
     font: normal normal normal 20px/27px Segoe UI;
-    margin: 0.5em;
+    margin: 0em 0em 0.5em 0em;
 }
 
 @media only screen and (max-device-width: 1178px) {

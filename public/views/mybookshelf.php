@@ -3,11 +3,9 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/books.css">
-    <!-- <link rel="stylesheet" type="text/css" href="public/css/bookfor.css"> -->
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/checkbox.js" defer></script>
-    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>My Bookshelf | BookSpace</title>
 </head>
 
@@ -66,7 +64,7 @@
                             <div id="<?= $book->getId(); ?>">
                                 <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                                 <div>
-                                    <h2><a href="bookprofile" class="goToBookProfile"><?= $book->getTitleEng(); ?></a></h2>
+                                    <h2><a href="bookprofile/<?= $book->getId(); ?>" class="goToBookProfile"><?= $book->getTitleEng(); ?></a></h2>
                                     <h3><?= $book->getAuthorSurname(); ?></h3>
                                 </div>
                             </div>

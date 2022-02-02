@@ -172,6 +172,35 @@ class BookshelfRepository extends Repository
         return $result;
     }
 
+    public function getBookProfile($id): ?Bookshelf {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM vbook_features 
+                WHERE book_id = :id
+                                            ');
+
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $bookProfile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            $result = new Bookshelf(
+                $bookProfile['title_eng'],
+                $bookProfile['author_name'],
+                $bookProfile['author_surname'],
+                $bookProfile['bookcover'],
+                $bookProfile['book_id'],
+                $bookProfile['description'],
+                $bookProfile['release_date'],
+                $bookProfile['pages'],
+                $bookProfile['cover_type'],
+                $bookProfile['genres'],
+                $bookProfile['title_org'],
+                $bookProfile['language']
+            );
+
+        return $result;
+    }
+
     public function getBookBySearch(string $searchString) {
 
         $searchString = '%' . strtolower($searchString) . '%';
@@ -190,7 +219,7 @@ class BookshelfRepository extends Repository
     public function getCountOfMyBooks($userLogin): int {
         $stmt = $this->database->connect()->prepare('
             SELECT count(login) FROM vbooks_authors_userdatabase
-                WHERE login = :userLogin;
+                WHERE login = :userLogin
         ');
 
         $stmt->bindParam(':userLogin', $userLogin, PDO::PARAM_INT);
@@ -199,65 +228,16 @@ class BookshelfRepository extends Repository
 
         return $countBooks['count'];
     }
-}
 
-/*
-    public function getBookProfile(int $book_id): Bookshelf
-    {
-
+    public function addBookToMyBookshelf($id,$userID): void {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM vbook_features
-                WHERE book_id = :book_id
-                                            ');
-
-        $stmt->bindParam(':book_id', $book_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $bookProfile = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        $bookFeatures = new Bookshelf(
-            $bookProfile['title_eng'],
-            $bookProfile['author_name'],
-            $bookProfile['author_surname'],
-            $bookProfile['bookcover'],
-            $bookProfile['book_id'],
-            $bookProfile['description'],
-            $bookProfile['release_date'],
-            $bookProfile['pages'],
-            $bookProfile['cover_type'],
-            $bookProfile['genres'],
-            $bookProfile['title_org'],
-            $bookProfile['language']
+            INSERT INTO users_database (users_id, book_id, if_read, if_bookforbook)
+                VALUES(?,?,\'0\', \'0\')
+        ');
+        $stmt->execute([
+            $userID,
+                $id
+            ]
         );
-        return $bookFeatures;
-    }*/
-
-    /*public function getBookProfile(int $book_id) {
-        $result = [];
-
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM vbook_features
-                WHERE book_id = :book_id
-                                            ');
-
-        $stmt->bindParam(':book_id', $book_id, PDO::PARAM_INT);
-        $stmt->execute();
-        $bookProfile = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach ($bookProfile as $book) {
-            $result[] = new Bookshelf(
-                $book['title_eng'],
-                $book['author_name'],
-                $book['author_surname'],
-                $book['bookcover'],
-                $book['book_id'],
-                $book['description'],
-                $book['release_date'],
-                $book['pages'],
-                $book['cover_type'],
-                $book['genres'],
-                $book['title_org'],
-                $book['language']
-            );
-        }
-        return $result;
-    }*/
+    }
+}

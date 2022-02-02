@@ -7,7 +7,6 @@
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/checkbox.js" defer></script>
-    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>All books | BookSpace</title>
 </head>
 
@@ -48,7 +47,7 @@
                         Books I have read: <?php echo $countreadbooks; ?>
                     </div>
                     <div class="my-bookpoints">
-                        My Bookpoints: 6
+                        My Bookpoints: 0
                     </div>
                     <?php include 'genresCheckbox.php'; ?>
                 </div>
@@ -65,7 +64,7 @@
                             <div id="<?= $book->getId(); ?>">
                                 <img src="public/img/uploads/<?= $book->getBookcover() ?>">
                                 <div>
-                                    <h2><a href="bookprofile"><?= $book->getTitleEng(); ?></a></h2>
+                                    <h2><a href="/bookprofile/<?= $book->getId(); ?>"><?= $book->getTitleEng(); ?></a></h2>
                                     <h3><?= $book->getAuthorSurname(); ?></h3>
                                 </div>
                             </div>

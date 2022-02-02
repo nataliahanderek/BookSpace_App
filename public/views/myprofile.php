@@ -57,7 +57,11 @@
                 </div>
             </div>
             <div class="right-site-book">
-                <p>Recently added</p>
+                <header class="header-profile">
+                    <div class="my-bookshelf-header">
+                        RECENTLY ADDED
+                    </div>
+                </header>
                 <div class="recently-added-layer">
                     <section class="recently-added">
                         <?php foreach ($mybookshelf as $book): ?>
@@ -67,7 +71,11 @@
                         <?php endforeach; ?>
                     </section>
                 </div>
-                <p>My read books</p>
+                <header class="header-profile-second">
+                    <div class="my-bookshelf-header">
+                        MY READ BOOKS
+                    </div>
+                </header>
                 <div class="my-read-books-layer">
                     <section class="my-read-books">
                         <?php foreach ($myreadbooks as $book): ?>
@@ -77,7 +85,11 @@
                         <?php endforeach; ?>
                     </section>                    
                 </div>
-                <p>My books for books</p>
+                <header class="header-profile-second">
+                    <div class="my-bookshelf-header">
+                        MY BOOKS FOR BOOKS
+                    </div>
+                </header>
                 <div class="my-books-for-books-layer">
                     <section class="my-books-for-books">
                         <?php foreach ($mybookforbook as $book): ?>

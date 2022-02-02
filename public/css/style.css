@@ -188,6 +188,24 @@ button[name="login-button"] {
     }
 }
 
+@media only screen and (max-device-width: 550px) {
+    input {
+        width: 85%;
+        margin: 0.2em;
+        height: 3em;
+        font: normal normal normal 25px/30px Segoe UI;
+    }
+
+    button[name="login-button"] {
+        font: normal normal normal 50px/50px Segoe UI;
+        height: 2em;
+    }
+
+    .want-sign-up-button {
+        font: normal normal normal 30px/30px Segoe
+    }
+}
+
 
 
 

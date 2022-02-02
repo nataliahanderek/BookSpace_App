@@ -13,7 +13,6 @@ section[class="book"] {
 .left-site > img {
     width: 15vw;
     display: flex;
-    flex-direction: centre;
     margin: 3em auto;
 }
 
@@ -40,7 +39,7 @@ section[class="book"] {
     background: #D6BFAD 0% 0% no-repeat padding-box;
     border: 1px solid #A58C78;
     border-radius: 20px 20px 20px 20px;
-    height: 25em;
+    height: 30em;
 
     display: flex;
     flex-direction: column;
@@ -63,7 +62,6 @@ h3 {
     justify-content: center;
     align-items: center;
 }
-
 .add-remove-button {
     border: 1px solid #A58C78;
     border-radius: 20px;
@@ -73,6 +71,17 @@ h3 {
     font: normal normal normal 20px/10px Segoe UI;
     color: #A58C78;
     padding: 0.8em 1em;
+}
+
+button {
+    border: 1px solid #A58C78;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0.5em;
+    text-align: center;
+    font: normal normal normal 20px/20px Segoe UI;
+    color: #A58C78;
+    padding: 0.5em 2em;
 }
 
 .mark-as-read-button {
@@ -90,30 +99,51 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 80vw;
 }
 
+.right-site-book > header {
+    width: 91%;
+    margin: 2em 0em 0em 0em;
+    padding: 0.5em;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.details-header > header {
+    width: 70%;
+    align-items: center;
+    font: normal normal normal 35px/35px Segoe UI;
+    padding: 0.5em 0.1em;
+}
+
 .description-layer {
-    margin: 3em 0em 1.5em 0em;
+    padding: 0em 0em 1.5em 0em;
+    margin: 1em 0em 1.5em 0em;
     width: 95%;
     height: 20vw;
     background-color: transparent;
     border: 1px solid #A58C78;
     border-radius: 20px;
     opacity: 0.8;
+    overflow: auto;
 }
 
 .description > p {
     background-color: transparent;
-    font: normal normal normal 20px/10px Segoe UI;
+    font: normal normal normal 20px/35px Segoe UI;
     color: #A58C78;
-    padding: 0.3em 3em;
+    padding: 0.3em 1em;
 }
 
 .details-layer {
     margin: 1.5em 0em;
-    width: 40vh;
+    width: 50vh;
     height: 20vw;
     background-color: transparent;
     border: 1px solid #A58C78;
@@ -127,7 +157,7 @@ h3 {
 .details {
     text-decoration: none;
     background-color: transparent;
-    font: normal normal normal 15px/15px Segoe UI;
+    font: normal normal normal 18px/20px Segoe UI;
     padding: 0.3em 1em;
     color: #A58C78;
 }

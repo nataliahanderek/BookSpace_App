@@ -16,7 +16,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">comics
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">cookbooks
@@ -32,7 +32,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">history
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">horror
@@ -48,7 +48,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">poatry
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">psychology
@@ -60,7 +60,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">science
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">science fiction
@@ -68,7 +68,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">self care
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">sports
@@ -84,7 +84,7 @@
         <span class="checkmark"></span>
     </label>
     <label class="genres-list">Young Adult
-        <input type="checkbox" checked="checked">
+        <input type="checkbox">
         <span class="checkmark"></span>
     </label>
 </div>

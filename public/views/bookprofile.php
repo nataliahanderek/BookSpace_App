@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="public/css/bookfor.css">
     <link rel="stylesheet" type="text/css" href="public/css/bookpage.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
-    <!--<script type="text/javascript" src="./public/js/loadBookProfile.js" defer></script>-->
     <title>Book profile | BookSpace</title>
 </head>
 
@@ -40,54 +39,67 @@
             <div class="left-site">
                 <section class="book">
                     <div id="book1">
-                        <img src="public/img/uploads/thelittleprince.jpg">
+                        <img src="public/img/uploads/<?= $bookprofile->getBookcover() ?>">
                         <div>
-                            <h2>The Little Prince</h2>
-                            <h3>de Saint-Exupery</h3>
+                            <h2><?= $bookprofile->getTitleEng() ?></h2>
+                            <h3><?= $bookprofile->getAuthorSurname() ?></h3>
                         </div>
                     </div>
                 </section>
                 <div class="button-under">
-                    <div class="add-or-remove">
-                        <a href="addorremove" class="add-remove-button">Add to/remove from my bookshelf</a>
+                    <div class="add-or-remove" id="<?= $book->getId(); ?>">
+                        <!--<a href="" class="add-remove-button">Add to my bookshelf</a>-->
+                        <!--<button class="add-remove-button" type="button">Add book to my bookshelf</button>-->
                     </div>
                     <div class="add-book-for-book">
-                        <a href="addbookforbook" class="add-book-for-book-button">Add to book for book</a>
+                        <a href="bookforbook" class="add-book-for-book-button">Add to book for book</a>
                     </div>
                     <div class="mark-as-read">
-                        <a href="markasread" class="mark-as-read-button">Mark as read</a>
+                        <a href="mybookshelf" class="mark-as-read-button">Mark as read</a>
                     </div>
                 </div>
             </div>
             <div class="right-site-book">
+                <header>
+                    <div class="my-bookshelf-header">
+                        DESCRIPTION
+                    </div>
+                </header>
                 <div class="description-layer">
                     <div class="description"> 
-                        <p>Description here</p>
+                        <p><?= $bookprofile->getDescription() ?></p>
                     </div>
                 </div>
-                <div class="details-layer">
-                    <div class="details"> 
-                        <ul>
+                <div class="details-header">
+                    <div class="details-layer">
+                        <div class="details">
+                            <ul>
                             <li>
-                                <p>Cover: Paperback</p>
+                                <p>Cover: <?= $bookprofile->getCoverType() ?></p>
                             </li>
                             <li>
-                                <p>Pages: 112</p>
+                                <p>Pages: <?= $bookprofile->getPages() ?></p>
                             </li>
                             <li>
-                                <p>Published: 6 April 1943</p>
+                                <p>Published: <?= $bookprofile->getReleaseDate() ?></p>
                             </li>
                             <li>
-                                <p>Original title: La Petit Prince</p>
+                                <p>Original title: <?= $bookprofile->getTitleOrg() ?></p>
                             </li>
                             <li>
-                                <p>Edition Language: English</p>
+                                <p>Edition Language: <?= $bookprofile->getLanguage() ?></p>
                             </li>
                             <li>
-                                <p>Genre: Classics</p>
+                                <p>Genre: <?= $bookprofile->getGenres() ?></p>
                             </li>
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
+                    <header>
+                        <div class="my-bookshelf-header">
+                            DETAILS
+                        </div>
+                    </header>
                 </div>
             </div>
         </div>

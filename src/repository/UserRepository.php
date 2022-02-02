@@ -23,13 +23,15 @@ class UserRepository extends Repository
         $cookieValue = $login;
         setcookie($cookieName, $cookieValue, time() + (3600 * 24 * 10), "/");
 
-        return new User(
+        $user2= new User(
             $user['name'],
             $user['surname'],
             $user['email'],
             $user['login'],
             $user['password']
         );
+        $user2->setId($user['users_id']);
+         return $user2;
     }
 
     public function addUser(User $user) {
@@ -44,5 +46,16 @@ class UserRepository extends Repository
             $user->getLogin(),
             $user->getPassword(),
         ]);
+    }
+    public function getLoggedUserId():int{
+        $login = $_COOKIE['Cookie'];
+        $stmt = $this->database->connect()->prepare('
+                                            SELECT users_id FROM users WHERE login = :login
+                                            ');
+
+        $stmt->bindParam(':login', $login, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchColumn(PDO::FETCH_ASSOC);
     }
 }

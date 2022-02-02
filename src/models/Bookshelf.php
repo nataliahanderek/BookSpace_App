@@ -5,7 +5,7 @@ class Bookshelf {
     private $author_name;
     private $author_surname;
     private $bookcover;
-    private $book_id;
+    private $id;
     private $description;
     private $release_date;
     private $pages;
@@ -15,13 +15,13 @@ class Bookshelf {
     private $language;
 
 
-    public function __construct($title_eng, $author_name, $author_surname, $bookcover, $book_id, $description, $release_date, $pages, $cover_type, $genres, $title_org, $language)
+    public function __construct($title_eng, $author_name, $author_surname, $bookcover, $id, $description, $release_date, $pages, $cover_type, $genres, $title_org, $language)
     {
         $this->title_eng = $title_eng;
         $this->author_name = $author_name;
         $this->author_surname = $author_surname;
         $this->bookcover = $bookcover;
-        $this->book_id = $book_id;
+        $this->id = $id;
         $this->description = $description;
         $this->release_date = $release_date;
         $this->pages = $pages;
@@ -73,15 +73,15 @@ class Bookshelf {
 
     public function getId()
     {
-        return $this->book_id;
+        return $this->id;
     }
 
-    public function setId($book_id): void
+    public function setId($id): void
     {
-        $this->book_id = $book_id;
+        $this->id = $id;
     }
 
-    public function getBookId()
+    /*public function getBookId()
     {
         return $this->book_id;
     }
@@ -89,7 +89,7 @@ class Bookshelf {
     public function setBookId($book_id): void
     {
         $this->book_id = $book_id;
-    }
+    }*/
 
     public function getDescription()
     {

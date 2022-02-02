@@ -14,10 +14,10 @@ class DefaultController extends AppController {
         $this->render('registration');
     }
 
-    public function bookprofile()
+    /*public function bookprofile()
     {
         $this->render('bookprofile');
-    }
+    }*/
 
     /*
     public function myprofile()

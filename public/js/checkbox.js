@@ -3,6 +3,6 @@ function myFunction() {
 
     if (checkBox.checked == true){
         var tekst = "art";
-        console.log(tekst.length);
+        console.log(tekst);
     }
 }
