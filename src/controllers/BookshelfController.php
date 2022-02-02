@@ -67,15 +67,18 @@ class BookshelfController extends AppController {
     }
 
     public function bookprofile($id) {
-        $bookProfile = $this->bookshelfRepository->getBookProfile($id);
-        //$addBook = $this->bookshelfRepository->addBookToMyBookshelf();
-        //'addbook' => $addBook
-        $this->render('bookprofile', ['bookprofile' => $bookProfile]);
+        if (isset($_COOKIE['Cookie'])) {
+            $bookProfile = $this->bookshelfRepository->getBookProfile($id);
+            $this->render('bookprofile', ['bookprofile' => $bookProfile]);
+        } else {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        }
     }
 
     public function addbook($id) {
         $userid=$this->userRepository->getLoggedUserId();
-        $this->bookshelfRepository->addBookToMyBookshelf($id,$userid);
+        $this->bookshelfRepository->addBookToMyBookshelf($id, $userid);
         http_response_code(200);
     }
 

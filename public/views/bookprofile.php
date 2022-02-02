@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/books.css">
-    <link rel="stylesheet" type="text/css" href="public/css/bookfor.css">
-    <link rel="stylesheet" type="text/css" href="public/css/bookpage.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/books.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/bookfor.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/bookpage.css">
     <script src="https://kit.fontawesome.com/6ee0d82bf7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./public/js/profilebook.js" defer></script>
     <title>Book profile | BookSpace</title>
 </head>
 
@@ -39,7 +40,7 @@
             <div class="left-site">
                 <section class="book">
                     <div id="book1">
-                        <img src="public/img/uploads/<?= $bookprofile->getBookcover() ?>">
+                        <img src="/public/img/uploads/<?= $bookprofile->getBookcover() ?>">
                         <div>
                             <h2><?= $bookprofile->getTitleEng() ?></h2>
                             <h3><?= $bookprofile->getAuthorSurname() ?></h3>
@@ -47,9 +48,9 @@
                     </div>
                 </section>
                 <div class="button-under">
-                    <div class="add-or-remove" id="<?= $book->getId(); ?>">
+                    <div class="add-or-remove" id="<?= $bookprofile->getId(); ?>">
                         <!--<a href="" class="add-remove-button">Add to my bookshelf</a>-->
-                        <!--<button class="add-remove-button" type="button">Add book to my bookshelf</button>-->
+                        <button class="add-remove-button" type="button">Add book to my bookshelf</button>
                     </div>
                     <div class="add-book-for-book">
                         <a href="bookforbook" class="add-book-for-book-button">Add to book for book</a>
