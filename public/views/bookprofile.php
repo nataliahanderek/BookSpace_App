@@ -49,7 +49,6 @@
                 </section>
                 <div class="button-under">
                     <div class="add-or-remove" id="<?= $bookprofile->getId(); ?>">
-                        <!--<a href="" class="add-remove-button">Add to my bookshelf</a>-->
                         <button class="add-remove-button" type="button">Add book to my bookshelf</button>
                     </div>
                     <div class="add-book-for-book">
